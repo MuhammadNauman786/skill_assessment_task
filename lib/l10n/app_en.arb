@@ -1,0 +1,8 @@
+{
+  "welcome": "Welcome to Find",
+  "enter_phoneNumber": "Enter your phone number below to get into",
+  "enter_code": "Enter the Code that we sent you on",
+  "did_not_receive_code": "Did not receive Code?",
+  "resent_button": "Resend",
+  "continue_button": "Continue"
+}
