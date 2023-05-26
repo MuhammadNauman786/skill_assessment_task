@@ -1,0 +1,8 @@
+{
+  "welcome": "مرحبًا بك في Find",
+  "enter_phoneNumber": "دخل رقم هاتفك أدناه للدخول إلى",
+  "enter_code": "أدخل الرمز الذي أرسلناه لك",
+  "did_not_receive_code": "لم تتلق رمز؟",
+  "resent_button": "إعادة إرسال",
+  "continue_button": "يكمل"
+}
