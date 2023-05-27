@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "47724602235",
+    "project_id": "skillassessmenttask",
+    "storage_bucket": "skillassessmenttask.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47724602235:android:b9c889b36d73c4ac66d3de",
+        "android_client_info": {
+          "package_name": "com.example.skill_assessment_task"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaBeTPCv9urXeN1bTTdejEaVv02RaPe1s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

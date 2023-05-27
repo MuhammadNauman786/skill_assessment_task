@@ -4,5 +4,14 @@
   "enter_code": "أدخل الرمز الذي أرسلناه لك",
   "did_not_receive_code": "لم تتلق رمز؟",
   "resent_button": "إعادة إرسال",
-  "continue_button": "يكمل"
+  "continue_button": "يكمل",
+  "phone": "هاتف",
+  "enter_country_na_0r_co": "أدخل اسم الدولة أو رمزها",
+  "we_Text_you": "نرسل لك رسالة نصية",
+  "otp_expire": "انتهت صلاحية كلمة المرور لمرة واحدة",
+  "invalid_otp": "تم إدخال OTP غير صالح",
+  "error_enter_code": "ادخل الرمز",
+  "error_enter_number": "أدخل رقم الهاتف",
+  "error_invalid_number": "رقم الهاتف غير صحيح",
+  "processing": "طلبك قيد المعالجة"
 }

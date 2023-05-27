@@ -4,5 +4,14 @@
   "enter_code": "Enter the Code that we sent you on",
   "did_not_receive_code": "Did not receive Code?",
   "resent_button": "Resend",
-  "continue_button": "Continue"
+  "continue_button": "Continue",
+  "phone": "Phone",
+  "enter_country_na_0r_co": "Enter country name or code",
+  "we_Text_you": "We text you",
+  "otp_expire": "OTP is Expired",
+  "invalid_otp": "Entered Invalid Otp",
+  "error_enter_code": "Enter the code",
+  "error_enter_number": "Enter the phone number",
+  "error_invalid_number": "Invalid phone number",
+  "processing": "Your request is in process"
 }
