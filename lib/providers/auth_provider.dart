@@ -59,11 +59,13 @@ class AuthProvider with ChangeNotifier{
       codeSent: (String verificationId, int? resendToken) async{
           isTimerStarted = true;
           isCodeSend = true;
-          isLoading = false;
           this.resendToken = resendToken;
           this.verificationId = verificationId;
-          Future.delayed(const Duration(seconds: 1));
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) => OtpVerificationScreen(phoneNumber: phoneNumber, code: code,)));
+          await Future.delayed(const Duration(seconds: 2));
+          isLoading = false;
+          if (context.mounted) {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => OtpVerificationScreen(phoneNumber: phoneNumber, code: code,)));
+          }
           notifyListeners();
       },
       codeAutoRetrievalTimeout: (String verificationId) async {
@@ -111,7 +113,7 @@ class AuthProvider with ChangeNotifier{
       setError(stringsOf(context)!.error_enter_code, context);
     }
     
-    isSignInLoading = true;
+    isSignInLoading = false;
     notifyListeners();
   }
 
