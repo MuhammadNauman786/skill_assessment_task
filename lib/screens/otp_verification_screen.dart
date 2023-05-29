@@ -12,10 +12,11 @@ import '../widgets/count_down_widget.dart';
 import '../widgets/custom_button.dart';
 
 class OtpVerificationScreen extends StatefulWidget {
-  const OtpVerificationScreen({Key? key, required this.phoneNumber})
+  OtpVerificationScreen({Key? key, required this.phoneNumber, this.code})
       : super(key: key);
 
   final String phoneNumber;
+  String? code;
 
   @override
   State<OtpVerificationScreen> createState() => _OtpVerificationScreenState();
@@ -29,6 +30,11 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
   void initState() {
     // TODO: implement initState
     var authProvider = context.read<AuthProvider>();
+    if (widget.code != null) {
+      setState(() {
+        textEditingController.text = widget.code!;
+      });
+    }
     // authProvider.verifyPhoneNumber(widget.phoneNumber, context);
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       authProvider.addListener(() {
@@ -39,7 +45,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
     });
     authProvider.onOtpFetch = (code){
       setState(() {
-        textEditingController.text = code;
+        textEditingController.text = code.smsCode.toString();
       });
     };
     super.initState();

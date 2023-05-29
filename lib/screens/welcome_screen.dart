@@ -108,16 +108,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                     if (validate()) {
                                       if(!authProvider.isLoading){
                                         authProvider.verifyPhoneNumber("${authProvider.countryCode}${textEditingController.text}", context);
+                                        // Navigator.of(context).push(MaterialPageRoute(builder: (context) => OtpVerificationScreen(phoneNumber: textEditingController.text, code: '123456',)));
+                                        authProvider.showToast('Verifying your request..');
                                       }
                                       else{
-                                        // Fluttertoast.showToast(
-                                        //     msg: 'Sending messages..',
-                                        //     toastLength: Toast.LENGTH_SHORT,
-                                        //     gravity: ToastGravity.BOTTOM,
-                                        //     timeInSecForIosWeb: 1,
-                                        //     backgroundColor: Colors.white10,
-                                        //     textColor: Colors.white,
-                                        //     fontSize: 16.0);
+                                        authProvider.showToast(stringsOf(context)!.processing);
                                       }
                                     }
                                   },

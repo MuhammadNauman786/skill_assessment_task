@@ -1,11 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:skill_assessment_task/utils/localization.dart';
 
 import '../screens/home_screen.dart';
 import '../screens/otp_verification_screen.dart';
 
-typedef OtpCodeFetchCallBack = void Function(String code);
+typedef OtpCodeFetchCallBack = void Function(PhoneAuthCredential credential);
 
 class AuthProvider with ChangeNotifier{
   String countryCode = '+93';
@@ -46,7 +47,7 @@ class AuthProvider with ChangeNotifier{
       phoneNumber: phoneNumber,
       verificationCompleted: (PhoneAuthCredential credential) async {
           code = credential.smsCode.toString();
-          onOtpFetch?.call(credential.smsCode.toString());
+          onOtpFetch?.call(credential);
           isCodeReceived = true;
           notifyListeners();
       },
@@ -61,7 +62,8 @@ class AuthProvider with ChangeNotifier{
           isLoading = false;
           this.resendToken = resendToken;
           this.verificationId = verificationId;
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) => OtpVerificationScreen(phoneNumber: phoneNumber,)));
+          Future.delayed(const Duration(seconds: 1));
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => OtpVerificationScreen(phoneNumber: phoneNumber, code: code,)));
           notifyListeners();
       },
       codeAutoRetrievalTimeout: (String verificationId) async {
@@ -121,6 +123,17 @@ class AuthProvider with ChangeNotifier{
 
   dynamic onResendCode(String phoneNumber, BuildContext context){
     verifyPhoneNumber(phoneNumber, context);
+  }
+
+  dynamic showToast(String text){
+    Fluttertoast.showToast(
+        msg: text,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 1,
+        backgroundColor: const Color(0xff07052A),
+        textColor: Colors.white,
+        fontSize: 16.0);
   }
 
 }

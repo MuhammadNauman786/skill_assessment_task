@@ -23,6 +23,7 @@ class PhoneNumberTextField extends StatelessWidget {
           ),
 
           textFieldController: phoneNumberController,
+
           formatInput: false,
           keyboardType: const TextInputType.numberWithOptions(
               signed: true, decimal: true),
@@ -41,6 +42,7 @@ class PhoneNumberTextField extends StatelessWidget {
           onInputChanged: (PhoneNumber value) {
             context.read<AuthProvider>().setCountryCode(value.dialCode!);
           },
+
           locale: local.locale.name,
         );
       }

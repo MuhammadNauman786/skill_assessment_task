@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:skill_assessment_task/providers/auth_provider.dart';
+import 'package:skill_assessment_task/providers/category_product_provider.dart';
 import 'package:skill_assessment_task/providers/locale_provider.dart';
 import 'package:skill_assessment_task/screens/home_screen.dart';
 import 'package:skill_assessment_task/screens/welcome_screen.dart';
@@ -24,6 +25,9 @@ void main() async{
       ),
       ChangeNotifierProvider(
         create: (context) => AuthProvider(),
+      ),
+      ChangeNotifierProvider(
+        create: (context) => CategoryProductProvider(),
       ),
     ],
       child: const MyApp()));
